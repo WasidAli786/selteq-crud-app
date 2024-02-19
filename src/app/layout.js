@@ -1,7 +1,9 @@
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
+import NextUIThemeProvider from "@/config/provider/NextUIThemeProvider";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={outfit.className}>
+        <main className="min-h-screen dark text-foreground bg-background">
+          <NextUIThemeProvider>{children}</NextUIThemeProvider>
+        </main>
+        <Toaster />
+      </body>
     </html>
   );
 }
