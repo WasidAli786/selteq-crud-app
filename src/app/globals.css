@@ -10,3 +10,25 @@ body {
 .container {
   @apply max-w-screen-2xl;
 }
+
+.list {
+  padding: 5px;
+  width: 300px;
+  background-color: lightgrey;
+}
+
+.list.draggingOver {
+  background-color: lightblue;
+}
+
+.item {
+  user-select: none;
+  padding: 10px;
+  margin: 0;
+  margin-bottom: 8px;
+  background-color: rgb(115, 101, 115);
+}
+
+.item.dragging {
+  background-color: rgb(190, 180, 181);
+}
